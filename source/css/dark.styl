@@ -1,11 +1,9 @@
-dark-primary-color = rgb(55, 61, 72)
-dark-primary-color-hover = rgb(67, 74, 86)
-dark-primary-color-active = rgb(44, 49, 58)
-dark-font-color = #c0c0c0
-body-bg-color = #0e1225
+dark-primary-color = var(--dark-primary-color)
+dark-primary-color-hover = var(--dark-primary-color-hover)
+dark-primary-color-active = var(--dark-primary-color-active)
+dark-font-color = var(--dark-font-color)
+body-bg-color = var(--body-bg-color)
 
-#universe
-    display: none
 
 .navbar-logo,
 .footer-logo
@@ -253,6 +251,18 @@ night()
 body.night
     night()
 
+VariablePair(name, val)
+  {unquote('--' + name)}: val
+
+
 @media (prefers-color-scheme: dark)
     body:not(.light)
         night()
+    :root
+        VariablePair('dark-primary-color', rgb(55, 61, 72))
+        VariablePair('dark-primary-color-hover', rgb(67, 74, 86))
+        VariablePair('dark-primary-color-active', rgb(44, 49, 58))
+        VariablePair('dark-font-color', #c0c0c0)
+        VariablePair('body-bg-color', #0e1225)
+
+    
