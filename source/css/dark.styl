@@ -2,6 +2,7 @@ dark-primary-color = rgb(55, 61, 72)
 dark-primary-color-hover = rgb(67, 74, 86)
 dark-primary-color-active = rgb(44, 49, 58)
 dark-font-color = #c0c0c0
+body-bg-color = #0e1225
 
 #universe
     display: none
@@ -12,7 +13,7 @@ dark-font-color = #c0c0c0
         display: none
 
 night()
-    background: #0e1225
+    background: body-bg-color
 
     // code highlight (https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css)
     .hljs{display:block;overflow-x:auto;padding:0.5em;color:#abb2bf;background:#282c34}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#c678dd}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#98c379}.hljs-built_in,.hljs-class .hljs-title{color:#e6c07b}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#d19a66}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#61aeee}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}
@@ -24,25 +25,11 @@ night()
     #night-nav #night-icon:before
         content: '\f0eb'
 
-    // global background
-    #universe
-        background: radial-gradient(1600px at 70% 120%, #212750 10%, #020409 100%)
-        display: block
-        position: fixed
-        margin: 0
-        padding: 0
-        border: 0
-        outline: 0
-        left: 0
-        top: 0
-        width: 100%
-        height: 100%
-        pointer-events: none
 
     // global brightness
-    img, video, iframe, .waifu, .donate
-        filter: brightness(0.8)
-        -webkit-filter: brightness(0.8)
+    //img, video, iframe, .waifu, .donate
+    //    filter: brightness(0.8)
+    //    -webkit-filter: brightness(0.8)
 
     // logo
     .navbar-logo,
@@ -71,6 +58,7 @@ night()
         .breadcrumb li.is-active a
             color: #c0c0c0
     .footer
+        background-color: #ffffff20
         backdrop-filter: none
         -webkit-backdrop-filter: none
         &:before
