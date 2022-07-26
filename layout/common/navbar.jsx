@@ -17,6 +17,7 @@ class Navbar extends Component {
     render() {
         const {
             logo,
+            logoUrl,
             logoLightUrl,
             logoDarkUrl,
             siteUrl,
@@ -113,6 +114,7 @@ module.exports = cacheComponent(Navbar, 'common.navbar', props => {
 
     return {
         logo,
+        logoUrl: url_for(logo),
         logoLightUrl: url_for(logoLight),
         logoDarkUrl: url_for(logoDark),
         siteUrl: url_for('/'),
