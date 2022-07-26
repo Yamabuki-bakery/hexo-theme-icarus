@@ -34,10 +34,7 @@ class Navbar extends Component {
             if (logo.text) {
                 navbarLogo = logo.text;
             } else {
-                navbarLogo = [
-                    <img class="logo-img" src={logoLightUrl} alt={siteTitle} height="28" />,
-                    <img class="logo-img-dark" src={logoDarkUrl} alt={siteTitle} height="28" />
-                ];
+                navbarLogo = <img src={logoUrl} alt={siteTitle} height="28" />;
             }
         } else {
             navbarLogo = siteTitle;
