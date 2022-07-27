@@ -60,14 +60,15 @@ night()
             color: #ffffff
         &.is-active
             color: #3273dc
-    .navbar,
+    .navbar
+        background-color: var(--header-bg-color)
     .card
-        background-color: rgba(40,44,52,0.5)
+        background-color: var(--content-card-bg-color)
         backdrop-filter: none
         -webkit-backdrop-filter: none
     .card
         &:hover
-            background-color: rgba(40,44,52,0.8)
+            background-color: var(--content-card-hover-color)
         .breadcrumb li.is-active a
             color: #c0c0c0
     .footer, .navbar-menu
@@ -75,7 +76,7 @@ night()
         backdrop-filter: none
         -webkit-backdrop-filter: none
         &:before
-            background-color: rgba(40,44,52,0.5)
+            background-color: var(--content-card-bg-color)
     // 暗色沒覆蓋到的 hover 和 active 部分
     a.navbar-item, 
     .navbar-link, 
@@ -289,5 +290,10 @@ VariablePair(name, val)
         VariablePair('dark-primary-color-active', rgb(44, 49, 58))
         VariablePair('dark-font-color', #c0c0c0)
         VariablePair('body-bg-color', #0e1225)
+        VariablePair('header-bg-color', rgb(34, 36, 56))
+        VariablePair('content-card-bg-color', rgba(40,44,52,0.5))
+        VariablePair('content-card-hover-color', rgba(40,44,52,0.8))
+
+        
 
     
