@@ -10,10 +10,17 @@ body-bg-color = var(--body-bg-color)
 .navbar
     position: sticky
     top: -3rem
+.section
+    padding: 5rem 1.5rem
+@media screen and (max-width: 768px)
+    .section
+        padding: 5rem 1.5rem
 @media screen and (min-width: $desktop)
     .navbar
         top: 0
-        
+    .section
+        padding: 3rem 1.5rem    
+
 .navbar-logo,
 .footer-logo
     .logo-img-dark
