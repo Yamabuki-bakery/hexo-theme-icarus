@@ -4,7 +4,16 @@ dark-primary-color-active = var(--dark-primary-color-active)
 dark-font-color = var(--dark-font-color)
 body-bg-color = var(--body-bg-color)
 
-
+// 粘性頂欄以及固定高度
+.navbar-brand, .navbar-tabs, .navbar-main, .navbar-menu
+    height: 3rem
+.navbar
+    position: sticky
+    top: -3rem
+@media screen and (min-width: $desktop)
+    .navbar
+        top: 0
+        
 .navbar-logo,
 .footer-logo
     .logo-img-dark
