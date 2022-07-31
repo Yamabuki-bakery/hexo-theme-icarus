@@ -1,5 +1,19 @@
 function dark() {
     let isDark = localStorage.getItem('night');
+    if (isDark === null) {
+        // isDark not exist.
+        if (!window.matchMedia) {
+            isDark = false;
+            return
+        }
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+        if (prefersDarkScheme.matches) {
+            isDark = true;
+        } else {
+            isDark = false;
+        }
+    }
     let switchBtn;
 
     function applyNight(value) {
@@ -28,17 +42,7 @@ function dark() {
     }
 
     findSwitchBtn();
-    if (isDark) applyNight(isDark);
-    if (isDark === null) {
-        // isDark not exist.
-        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-        if (prefersDarkScheme.matches) {
-            isDark = true;
-        } else {
-            isDark = false;
-        }
-    }
+    applyNight(isDark);
 };
 
 
