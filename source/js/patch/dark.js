@@ -1,6 +1,6 @@
 function dark() {
-    let isNight = localStorage.getItem('night');
-    let nightNav;
+    let isDark = localStorage.getItem('night');
+    let switchBtn;
 
     function applyNight(value) {
         if (value.toString() === 'true') {
@@ -12,23 +12,33 @@ function dark() {
         }
     }
 
-    function findNightNav() {
-        nightNav = document.getElementById('night-nav');
-        if (!nightNav) {
-            setTimeout(findNightNav, 100);
+    function findSwitchBtn() {
+        switchBtn = document.getElementById('night-nav');
+        if (!switchBtn) {
+            setTimeout(findSwitchBtn, 100);
         } else {
-            nightNav.addEventListener('click', switchNight);
+            switchBtn.addEventListener('click', switchNight);
         }
     }
 
     function switchNight() {
-        isNight = isNight ? isNight.toString() !== 'true' : true;
-        applyNight(isNight);
-        localStorage.setItem('night', isNight);
+        isDark = isDark ? isDark.toString() !== 'true' : true;
+        applyNight(isDark);
+        localStorage.setItem('night', isDark);
     }
 
-    findNightNav();
-    isNight && applyNight(isNight);
+    findSwitchBtn();
+    if (isDark) applyNight(isDark);
+    if (isDark.toString() !== 'true' && isDark.toString() !== 'false') {
+        // isDark not exist.
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+        if (prefersDarkScheme.matches) {
+            isDark = true;
+        } else {
+            isDark = false;
+        }
+    }
 };
 
 
