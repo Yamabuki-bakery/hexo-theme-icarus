@@ -29,7 +29,7 @@ function dark() {
 
     findSwitchBtn();
     if (isDark) applyNight(isDark);
-    if (isDark.toString() !== 'true' && isDark.toString() !== 'false') {
+    if (isDark === null) {
         // isDark not exist.
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
